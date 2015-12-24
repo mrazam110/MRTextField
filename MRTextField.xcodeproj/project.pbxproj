@@ -10,6 +10,8 @@
 		2716A7841C2C3D910046EEB0 /* MRTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 2716A7831C2C3D910046EEB0 /* MRTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2716A78B1C2C3D910046EEB0 /* MRTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2716A7801C2C3D910046EEB0 /* MRTextField.framework */; };
 		2716A7901C2C3D910046EEB0 /* MRTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A78F1C2C3D910046EEB0 /* MRTextFieldTests.swift */; };
+		2716A79C1C2C3DA80046EEB0 /* MRTextFieldIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A79A1C2C3DA80046EEB0 /* MRTextFieldIB.swift */; };
+		2716A79D1C2C3DA80046EEB0 /* MRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A79B1C2C3DA80046EEB0 /* MRTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		2716A78A1C2C3D910046EEB0 /* MRTextFieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MRTextFieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2716A78F1C2C3D910046EEB0 /* MRTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRTextFieldTests.swift; sourceTree = "<group>"; };
 		2716A7911C2C3D910046EEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2716A79A1C2C3DA80046EEB0 /* MRTextFieldIB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextFieldIB.swift; sourceTree = "<group>"; };
+		2716A79B1C2C3DA80046EEB0 /* MRTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				2716A7831C2C3D910046EEB0 /* MRTextField.h */,
+				2716A79A1C2C3DA80046EEB0 /* MRTextFieldIB.swift */,
+				2716A79B1C2C3DA80046EEB0 /* MRTextField.swift */,
 				2716A7851C2C3D910046EEB0 /* Info.plist */,
 			);
 			path = MRTextField;
@@ -194,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2716A79D1C2C3DA80046EEB0 /* MRTextField.swift in Sources */,
+				2716A79C1C2C3DA80046EEB0 /* MRTextFieldIB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,28 +316,33 @@
 		2716A7951C2C3D910046EEB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MRTextField/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MR.MRTextField;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		2716A7961C2C3D910046EEB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MRTextField/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MR.MRTextField;
 				PRODUCT_NAME = "$(TARGET_NAME)";
