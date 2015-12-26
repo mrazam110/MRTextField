@@ -32,10 +32,49 @@ class MRTextFieldIB:UITextField {
         }
     }
     
+    /*Text Field Style 
+    *0 for Line
+    *1 for Square bracket style at the bottom*/
+    @IBInspectable var style:Int = 0 {
+        didSet{
+            if style == 0 {
+                bottomStyle = .LINE
+            }else if style == 1 {
+                bottomStyle = .SQUAREBRACKET
+            }else {
+                bottomStyle = .LINE
+            }
+        }
+    }
+    
+    private var bottomStyle:bottomLine = .LINE
+    
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
-        /*Designing Bottom Line*/
+        if bottomStyle == .LINE {
+            /*Designing Bottom Line*/
+            drawLine(rect)
+        } else if bottomStyle == .SQUAREBRACKET {
+            /*Designing Square Bracket on Bottom*/
+            drawSquareBracket(rect)
+        }
+    }
+    
+    private func drawLine(rect: CGRect){
+        let path = UIBezierPath()
+        
+        path.moveToPoint(CGPointMake(0, rect.height))
+        path.addLineToPoint(CGPointMake(rect.width, rect.height))
+        
+        lineColor.setStroke()
+        path.stroke()
+        
+        path.lineWidth = 2
+    }
+    
+    private func drawSquareBracket(rect: CGRect){
+        
         let path = UIBezierPath()
         path.moveToPoint(CGPointMake(0, rect.height - 5))
         path.addLineToPoint(CGPointMake(0, rect.height))
@@ -47,7 +86,6 @@ class MRTextFieldIB:UITextField {
         
         path.lineWidth = 2
     }
-    
     
     override func textRectForBounds(bounds: CGRect) -> CGRect {
         return self.newBounds(bounds)
@@ -78,6 +116,11 @@ class MRTextFieldIB:UITextField {
             NSFontAttributeName: f]
         self.attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: attributes)
         super.drawPlaceholderInRect(rect)
+    }
+    
+    enum bottomLine:Int {
+        case LINE
+        case SQUAREBRACKET
     }
     
 }

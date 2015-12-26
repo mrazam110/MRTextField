@@ -1,6 +1,6 @@
 ## MRTextField
 
-![Screenshot](https://github.com/mrazam110/MRTextField/blob/master/screenshots/screenshot01.png)
+![Screenshot](https://github.com/mrazam110/MRTextField/blob/master/screenshots/screenshot02.png)
 
 #Requirements
 * iOS 8.0+
@@ -35,6 +35,12 @@ textField.textColorPlaceHolder = UIColor.lightGrayColor()
 
 // For changing the size of Place Holder text
 textField.textSizePlaceHolder = 10.0
+
+/* For changing the style of Text Field
+.LINE for Line and
+.SQAUREBRACKET for different shape at the bottom
+by default it is .LINE*/
+textField.style = .SQUAREBRACKET
 ````
 
 #You can use IBDesignable
@@ -44,6 +50,10 @@ Step 1. Drag and Drop the UITextField
 Step 2. In Identity Text, in Custom class, change UITextField to MRTextFieldIB
 
 Step 3. In Attributes Inspector, you can view properties
+
+*For changing the style of Text Field*
+
+Set Value of `Style` to 0 (LINE) or 1 (SQUARE BRACKET at the Bottom)
 
 and ENJOY!!
 
