@@ -8,6 +8,7 @@
 
 import UIKit
 
+/*If you dont want to use IBDesignable feature*/
 class MRTextField:UITextField {
     
     /*Padding Left and Right //UIEdgeInsets(0,5,0,5) TLBR*/

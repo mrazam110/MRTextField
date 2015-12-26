@@ -12,6 +12,9 @@
 		2716A7901C2C3D910046EEB0 /* MRTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A78F1C2C3D910046EEB0 /* MRTextFieldTests.swift */; };
 		2716A79C1C2C3DA80046EEB0 /* MRTextFieldIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A79A1C2C3DA80046EEB0 /* MRTextFieldIB.swift */; };
 		2716A79D1C2C3DA80046EEB0 /* MRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A79B1C2C3DA80046EEB0 /* MRTextField.swift */; };
+		2716A7A71C2C55BA0046EEB0 /* DocumentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A7A61C2C55BA0046EEB0 /* DocumentPickerViewController.swift */; };
+		2716A7AA1C2C55BA0046EEB0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2716A7A81C2C55BA0046EEB0 /* MainInterface.storyboard */; };
+		2716A7B51C2C55BB0046EEB0 /* FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A7B41C2C55BB0046EEB0 /* FileProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,15 @@
 		2716A7911C2C3D910046EEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2716A79A1C2C3DA80046EEB0 /* MRTextFieldIB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextFieldIB.swift; sourceTree = "<group>"; };
 		2716A79B1C2C3DA80046EEB0 /* MRTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextField.swift; sourceTree = "<group>"; };
+		2716A7A21C2C55BA0046EEB0 /* Documentation.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Documentation.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2716A7A51C2C55BA0046EEB0 /* Documentation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Documentation.entitlements; sourceTree = "<group>"; };
+		2716A7A61C2C55BA0046EEB0 /* DocumentPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerViewController.swift; sourceTree = "<group>"; };
+		2716A7A91C2C55BA0046EEB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2716A7AB1C2C55BA0046EEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2716A7B01C2C55BB0046EEB0 /* DocumentationFileProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DocumentationFileProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2716A7B31C2C55BB0046EEB0 /* DocumentationFileProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DocumentationFileProvider.entitlements; sourceTree = "<group>"; };
+		2716A7B41C2C55BB0046EEB0 /* FileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProvider.swift; sourceTree = "<group>"; };
+		2716A7B61C2C55BB0046EEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2716A79F1C2C55BA0046EEB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2716A7AD1C2C55BB0046EEB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +85,8 @@
 			children = (
 				2716A7821C2C3D910046EEB0 /* MRTextField */,
 				2716A78E1C2C3D910046EEB0 /* MRTextFieldTests */,
+				2716A7A31C2C55BA0046EEB0 /* Documentation */,
+				2716A7B11C2C55BB0046EEB0 /* DocumentationFileProvider */,
 				2716A7811C2C3D910046EEB0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +96,8 @@
 			children = (
 				2716A7801C2C3D910046EEB0 /* MRTextField.framework */,
 				2716A78A1C2C3D910046EEB0 /* MRTextFieldTests.xctest */,
+				2716A7A21C2C55BA0046EEB0 /* Documentation.appex */,
+				2716A7B01C2C55BB0046EEB0 /* DocumentationFileProvider.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +120,43 @@
 				2716A7911C2C3D910046EEB0 /* Info.plist */,
 			);
 			path = MRTextFieldTests;
+			sourceTree = "<group>";
+		};
+		2716A7A31C2C55BA0046EEB0 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				2716A7A61C2C55BA0046EEB0 /* DocumentPickerViewController.swift */,
+				2716A7A81C2C55BA0046EEB0 /* MainInterface.storyboard */,
+				2716A7AB1C2C55BA0046EEB0 /* Info.plist */,
+				2716A7A41C2C55BA0046EEB0 /* Supporting Files */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		2716A7A41C2C55BA0046EEB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2716A7A51C2C55BA0046EEB0 /* Documentation.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2716A7B11C2C55BB0046EEB0 /* DocumentationFileProvider */ = {
+			isa = PBXGroup;
+			children = (
+				2716A7B41C2C55BB0046EEB0 /* FileProvider.swift */,
+				2716A7B61C2C55BB0046EEB0 /* Info.plist */,
+				2716A7B21C2C55BB0046EEB0 /* Supporting Files */,
+			);
+			path = DocumentationFileProvider;
+			sourceTree = "<group>";
+		};
+		2716A7B21C2C55BB0046EEB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2716A7B31C2C55BB0046EEB0 /* DocumentationFileProvider.entitlements */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +209,40 @@
 			productReference = 2716A78A1C2C3D910046EEB0 /* MRTextFieldTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2716A7A11C2C55BA0046EEB0 /* Documentation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2716A7BB1C2C55BB0046EEB0 /* Build configuration list for PBXNativeTarget "Documentation" */;
+			buildPhases = (
+				2716A79E1C2C55BA0046EEB0 /* Sources */,
+				2716A79F1C2C55BA0046EEB0 /* Frameworks */,
+				2716A7A01C2C55BA0046EEB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+			productReference = 2716A7A21C2C55BA0046EEB0 /* Documentation.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2716A7AF1C2C55BB0046EEB0 /* DocumentationFileProvider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2716A7BC1C2C55BB0046EEB0 /* Build configuration list for PBXNativeTarget "DocumentationFileProvider" */;
+			buildPhases = (
+				2716A7AC1C2C55BB0046EEB0 /* Sources */,
+				2716A7AD1C2C55BB0046EEB0 /* Frameworks */,
+				2716A7AE1C2C55BB0046EEB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DocumentationFileProvider;
+			productName = DocumentationFileProvider;
+			productReference = 2716A7B01C2C55BB0046EEB0 /* DocumentationFileProvider.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,6 +259,12 @@
 					2716A7891C2C3D910046EEB0 = {
 						CreatedOnToolsVersion = 7.2;
 					};
+					2716A7A11C2C55BA0046EEB0 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					2716A7AF1C2C55BB0046EEB0 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 				};
 			};
 			buildConfigurationList = 2716A77A1C2C3D910046EEB0 /* Build configuration list for PBXProject "MRTextField" */;
@@ -166,6 +273,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2716A7761C2C3D910046EEB0;
 			productRefGroup = 2716A7811C2C3D910046EEB0 /* Products */;
@@ -174,6 +282,8 @@
 			targets = (
 				2716A77F1C2C3D910046EEB0 /* MRTextField */,
 				2716A7891C2C3D910046EEB0 /* MRTextFieldTests */,
+				2716A7A11C2C55BA0046EEB0 /* Documentation */,
+				2716A7AF1C2C55BB0046EEB0 /* DocumentationFileProvider */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +297,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2716A7881C2C3D910046EEB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2716A7A01C2C55BA0046EEB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2716A7AA1C2C55BA0046EEB0 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2716A7AE1C2C55BB0046EEB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,6 +338,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2716A79E1C2C55BA0046EEB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2716A7A71C2C55BA0046EEB0 /* DocumentPickerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2716A7AC1C2C55BB0046EEB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2716A7B51C2C55BB0046EEB0 /* FileProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -222,6 +363,17 @@
 			targetProxy = 2716A78C1C2C3D910046EEB0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2716A7A81C2C55BA0046EEB0 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2716A7A91C2C55BA0046EEB0 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2716A7921C2C3D910046EEB0 /* Debug */ = {
@@ -370,6 +522,54 @@
 			};
 			name = Release;
 		};
+		2716A7B71C2C55BB0046EEB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Documentation/Documentation.entitlements;
+				INFOPLIST_FILE = Documentation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MR.Documentation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2716A7B81C2C55BB0046EEB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Documentation/Documentation.entitlements;
+				INFOPLIST_FILE = Documentation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MR.Documentation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2716A7B91C2C55BB0046EEB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DocumentationFileProvider/DocumentationFileProvider.entitlements;
+				INFOPLIST_FILE = DocumentationFileProvider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MR.DocumentationFileProvider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2716A7BA1C2C55BB0046EEB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DocumentationFileProvider/DocumentationFileProvider.entitlements;
+				INFOPLIST_FILE = DocumentationFileProvider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MR.DocumentationFileProvider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -389,12 +589,30 @@
 				2716A7961C2C3D910046EEB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2716A7971C2C3D910046EEB0 /* Build configuration list for PBXNativeTarget "MRTextFieldTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2716A7981C2C3D910046EEB0 /* Debug */,
 				2716A7991C2C3D910046EEB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2716A7BB1C2C55BB0046EEB0 /* Build configuration list for PBXNativeTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2716A7B71C2C55BB0046EEB0 /* Debug */,
+				2716A7B81C2C55BB0046EEB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2716A7BC1C2C55BB0046EEB0 /* Build configuration list for PBXNativeTarget "DocumentationFileProvider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2716A7B91C2C55BB0046EEB0 /* Debug */,
+				2716A7BA1C2C55BB0046EEB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

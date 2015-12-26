@@ -8,6 +8,7 @@
 
 import UIKit
 
+/*If you want to use @IBDesignable*/
 @IBDesignable
 class MRTextFieldIB:UITextField {
     
