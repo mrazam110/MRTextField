@@ -19,7 +19,6 @@ s.author = { "Muhammad Raza Master" => "mrazam110@gmail.com" }
 # For example,
 # s.author = { "Joshua Greene" => "jrg.developer@gmail.com" }
 
-s.documentation_url = ""
 
 # 5 - Replace this URL with your own Github page's URL (from the address bar)
 s.homepage = "https://github.com/mrazam110/MRTextField"
