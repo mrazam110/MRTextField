@@ -22,10 +22,35 @@ class MRTextField:UITextField {
     /*Place holder text size*/
     var textSizePlaceHolder:CGFloat = 12.0
     
+    /*How bottom line should look like*/
+    var style:bottomLine = .LINE
+    
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
-        /*Designing Bottom Line*/
+        if style == .LINE {
+            /*Designing Bottom Line*/
+            drawLine(rect)
+        } else if style == .SQUAREBRACKET {
+            /*Designing Square Bracket on Bottom*/
+            drawSquareBracket(rect)
+        }
+    }
+    
+    private func drawLine(rect: CGRect){
+        let path = UIBezierPath()
+        
+        path.moveToPoint(CGPointMake(0, rect.height))
+        path.addLineToPoint(CGPointMake(rect.width, rect.height))
+        
+        lineColor.setStroke()
+        path.stroke()
+        
+        path.lineWidth = 2
+    }
+    
+    private func drawSquareBracket(rect: CGRect){
+        
         let path = UIBezierPath()
         path.moveToPoint(CGPointMake(0, rect.height - 5))
         path.addLineToPoint(CGPointMake(0, rect.height))
@@ -68,6 +93,11 @@ class MRTextField:UITextField {
             NSFontAttributeName: f]
         self.attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: attributes)
         super.drawPlaceholderInRect(rect)
+    }
+    
+    enum bottomLine:Int {
+        case LINE
+        case SQUAREBRACKET
     }
     
 }
