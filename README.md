@@ -29,12 +29,18 @@ Step 2. In Identity Text, in Custom class, change UITextField to MRTextFieldIB
 
 Step 3. In Attributes Inspector, you can view properties
 
-**Properties:
+**Properties:**
+
 *Highlight Line Color: UIColor* UIColor.greenColor()
+
 *Line Color: UIColor* default: UIColor.lightGrayColor()
+
 *Line Height: CGFloat* default: 1.0
+
 *Highlight Animation: Bool* default: True
+
 *Text Color Place Holder: UIColor* default: UIColor.lightGrayColor()
+
 *Text Size Place Holder: CGFloat* default: 12.0
 
 *For changing the style of Text Field*
