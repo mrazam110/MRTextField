@@ -8,13 +8,30 @@
 
 import UIKit
 
-class MRTextField:UITextField {
+class MRTextField:UITextField, UITextFieldDelegate {
+    
+    /*Padding Left and Right //UIEdgeInsets(0,5,0,5) TLBR*/
+    private var rectangle:CGRect!
+    
+    private var highlightLayer = CAShapeLayer()
+    private var normalLayer = CAShapeLayer()
+    
+    var myDelegate:MRTextFieldDelegate?
     
     /*Padding Left and Right //UIEdgeInsets(0,5,0,5) TLBR*/
     let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     
     /*Line Color*/
-    var lineColor:UIColor = UIColor.blueColor()
+    var highlightLineColor:UIColor = UIColor.greenColor()
+    
+    /*Line Color*/
+    var lineColor:UIColor = UIColor.lightGrayColor()
+    
+    /*Line Width*/
+    var lineHeight:CGFloat = 1
+    
+    /*Hightlight animation*/
+    var highlightAnimation:Bool = true
     
     /*Place holder text color*/
     var textColorPlaceHolder:UIColor = UIColor.lightGrayColor()
@@ -22,48 +39,111 @@ class MRTextField:UITextField {
     /*Place holder text size*/
     var textSizePlaceHolder:CGFloat = 12.0
     
-    /*How bottom line should look like*/
-    var style:bottomLine = .LINE
-    
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
-        
-        if style == .LINE {
-            /*Designing Bottom Line*/
-            drawLine(rect)
-        } else if style == .SQUAREBRACKET {
-            /*Designing Square Bracket on Bottom*/
-            drawSquareBracket(rect)
+    /*Text Field Style
+    *0 for Line
+    *1 for Square bracket style at the bottom*/
+    var style:Int = 0 {
+        didSet{
+            if style == 0 {
+                bottomStyle = .LINE
+            }else if style == 1 {
+                bottomStyle = .SQUAREBRACKET
+            }else {
+                bottomStyle = .LINE
+            }
         }
     }
     
-    private func drawLine(rect: CGRect){
-        let path = UIBezierPath()
-        
-        path.moveToPoint(CGPointMake(0, rect.height))
-        path.addLineToPoint(CGPointMake(rect.width, rect.height))
-        
-        lineColor.setStroke()
-        path.stroke()
-        
-        path.lineWidth = 2
+    private var bottomStyle:bottomLine = .LINE
+    
+    deinit{
+        self.delegate = nil
     }
     
-    private func drawSquareBracket(rect: CGRect){
+    /*Override DrawRect*/
+    override func drawRect(rect: CGRect) {
+        super.drawRect(rect)
         
-        let path = UIBezierPath()
-        path.moveToPoint(CGPointMake(0, rect.height - 5))
-        path.addLineToPoint(CGPointMake(0, rect.height))
-        path.addLineToPoint(CGPointMake(rect.width, rect.height))
-        path.addLineToPoint(CGPointMake(rect.width, rect.height-5))
+        self.delegate = self
         
-        lineColor.setStroke()
-        path.stroke()
-        
-        path.lineWidth = 2
+        rectangle = rect
+        drawLine(normalLayer, isHighlight: false)
     }
     
+    /*draw bottom line*/
+    private func drawLine(layer: CAShapeLayer, isHighlight: Bool){
+        let path = getPath()
+        
+        layer.bounds = self.frame
+        layer.position = self.center
+        layer.path = path.CGPath
+        
+        layer.lineWidth = lineHeight
+        layer.strokeColor = lineColor.CGColor
+        layer.fillColor = UIColor.clearColor().CGColor
+        
+        if isHighlight {
+            layer.strokeColor = highlightLineColor.CGColor
+            if highlightAnimation {
+                CATransaction.begin()
+                let hlAnimation = CABasicAnimation(keyPath: "strokeEnd")
+                hlAnimation.duration = 0.2
+                hlAnimation.fromValue = 0.0
+                hlAnimation.toValue = 1.0
+                hlAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+                hlAnimation.removedOnCompletion = false
+                hlAnimation.fillMode = kCAFillModeForwards
+                CATransaction.setCompletionBlock({ () -> Void in
+                })
+                layer.addAnimation(hlAnimation, forKey: "strokeEnd")
+                CATransaction.commit()
+            }
+        }
+        
+        self.layer.addSublayer(layer)
+    }
     
+    /*For removing Highlight*/
+    private func removeHighlight(){
+        if highlightAnimation {
+            CATransaction.begin()
+            let hlAnimation = CABasicAnimation(keyPath: "strokeEnd")
+            hlAnimation.duration = 0.1
+            hlAnimation.fromValue = 1.0
+            hlAnimation.toValue = 0.0
+            hlAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            hlAnimation.removedOnCompletion = false
+            hlAnimation.fillMode = kCAFillModeForwards
+            CATransaction.setCompletionBlock({ () -> Void in
+                self.highlightLayer.removeFromSuperlayer()
+            })
+            highlightLayer.addAnimation(hlAnimation, forKey: "strokeEnd")
+            CATransaction.commit()
+        }else{
+            self.highlightLayer.removeFromSuperlayer()
+        }
+    }
+    
+    /*returns UIBezierPath*/
+    private func getPath() -> UIBezierPath {
+        let path = UIBezierPath()
+        switch bottomStyle {
+        case .SQUAREBRACKET:
+            path.moveToPoint(CGPointMake(0, rectangle.height - 5))
+            path.addLineToPoint(CGPointMake(0, rectangle.height))
+            path.addLineToPoint(CGPointMake(rectangle.width, rectangle.height))
+            path.addLineToPoint(CGPointMake(rectangle.width, rectangle.height - 5))
+            break
+        default:
+            path.moveToPoint(CGPointMake(0, rectangle.height))
+            path.addLineToPoint(CGPointMake(rectangle.width, rectangle.height))
+            break
+        }
+        
+        return path
+    }
+    
+    // MARK: TextField BOUNDS
     override func textRectForBounds(bounds: CGRect) -> CGRect {
         return self.newBounds(bounds)
     }
@@ -77,7 +157,6 @@ class MRTextField:UITextField {
     }
     
     private func newBounds(bounds: CGRect) -> CGRect {
-        
         var newBounds = bounds
         newBounds.origin.x += padding.left
         newBounds.origin.y += padding.top
@@ -95,9 +174,26 @@ class MRTextField:UITextField {
         super.drawPlaceholderInRect(rect)
     }
     
+    //UITextFieldDelegate Functions
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+        drawLine(highlightLayer, isHighlight: true)
+        self.myDelegate?.MRTextFieldDidBeginEditing?(self)
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+        self.removeHighlight()
+        self.myDelegate?.MRTextFieldDidEndEditing?(self)
+    }
+    
     enum bottomLine:Int {
         case LINE
         case SQUAREBRACKET
     }
-    
+}
+
+@objc protocol MRTextFieldDelegate {
+    optional func MRTextFieldDidBeginEditing(textField: MRTextField)
+    optional func MRTextFieldDidEndEditing(textField: MRTextField)
 }

@@ -10,8 +10,8 @@
 		2716A7841C2C3D910046EEB0 /* MRTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 2716A7831C2C3D910046EEB0 /* MRTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2716A78B1C2C3D910046EEB0 /* MRTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2716A7801C2C3D910046EEB0 /* MRTextField.framework */; };
 		2716A7901C2C3D910046EEB0 /* MRTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A78F1C2C3D910046EEB0 /* MRTextFieldTests.swift */; };
-		2716A79C1C2C3DA80046EEB0 /* MRTextFieldIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A79A1C2C3DA80046EEB0 /* MRTextFieldIB.swift */; };
-		2716A79D1C2C3DA80046EEB0 /* MRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716A79B1C2C3DA80046EEB0 /* MRTextField.swift */; };
+		27D8A2841C34FCBD00DB2E56 /* MRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D8A2821C34FCBD00DB2E56 /* MRTextField.swift */; };
+		27D8A2851C34FCBD00DB2E56 /* MRTextFieldIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D8A2831C34FCBD00DB2E56 /* MRTextFieldIB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +31,8 @@
 		2716A78A1C2C3D910046EEB0 /* MRTextFieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MRTextFieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2716A78F1C2C3D910046EEB0 /* MRTextFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRTextFieldTests.swift; sourceTree = "<group>"; };
 		2716A7911C2C3D910046EEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2716A79A1C2C3DA80046EEB0 /* MRTextFieldIB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextFieldIB.swift; sourceTree = "<group>"; };
-		2716A79B1C2C3DA80046EEB0 /* MRTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextField.swift; sourceTree = "<group>"; };
+		27D8A2821C34FCBD00DB2E56 /* MRTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextField.swift; sourceTree = "<group>"; };
+		27D8A2831C34FCBD00DB2E56 /* MRTextFieldIB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextFieldIB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				2716A7831C2C3D910046EEB0 /* MRTextField.h */,
-				2716A79A1C2C3DA80046EEB0 /* MRTextFieldIB.swift */,
-				2716A79B1C2C3DA80046EEB0 /* MRTextField.swift */,
+				27D8A2821C34FCBD00DB2E56 /* MRTextField.swift */,
+				27D8A2831C34FCBD00DB2E56 /* MRTextFieldIB.swift */,
 				2716A7851C2C3D910046EEB0 /* Info.plist */,
 			);
 			path = MRTextField;
@@ -200,8 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2716A79D1C2C3DA80046EEB0 /* MRTextField.swift in Sources */,
-				2716A79C1C2C3DA80046EEB0 /* MRTextFieldIB.swift in Sources */,
+				27D8A2841C34FCBD00DB2E56 /* MRTextField.swift in Sources */,
+				27D8A2851C34FCBD00DB2E56 /* MRTextFieldIB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +389,7 @@
 				2716A7961C2C3D910046EEB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2716A7971C2C3D910046EEB0 /* Build configuration list for PBXNativeTarget "MRTextFieldTests" */ = {
 			isa = XCConfigurationList;
@@ -397,6 +398,7 @@
 				2716A7991C2C3D910046EEB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
