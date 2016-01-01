@@ -8,7 +8,7 @@ s.summary = "Customize UITextField for iOS Developers"
 s.requires_arc = true
 
 # 2
-s.version = "0.1.4"
+s.version = "0.1.3"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
