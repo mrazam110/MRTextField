@@ -1,5 +1,9 @@
 ## MRTextField
 
+![License](https://img.shields.io/cocoapods/l/MRTextField.svg) 
+![Platform](https://img.shields.io/cocoapods/p/MRTextField.svg)
+![Version](https://img.shields.io/cocoapods/v/MRTextField.svg)
+
 ![Screenshot](https://github.com/mrazam110/MRTextField/blob/master/screenshots/screenshot03.png)
 
 #Requirements
