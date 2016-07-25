@@ -10,39 +10,59 @@ import UIKit
 
 class MRTextField:UITextField, UITextFieldDelegate {
     
-    /*Padding Left and Right //UIEdgeInsets(0,5,0,5) TLBR*/
+    /** Size of Frame */
     private var rectangle:CGRect!
     
     private var highlightLayer = CAShapeLayer()
     private var normalLayer = CAShapeLayer()
     
-    var myDelegate:MRTextFieldDelegate?
+    internal var myDelegate:MRTextFieldDelegate?
     
-    /*Padding Left and Right //UIEdgeInsets(0,5,0,5) TLBR*/
-    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+    /** Adjust with respect to Drop Down Image and Icon Image*/
+    private var padding:UIEdgeInsets {
+        get {
+            if iconImage == nil {
+                if dropDown != nil {
+                    return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 20)
+                }
+                return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+            }else{
+                if dropDown != nil {
+                    return UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 20)
+                }
+                return UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 5)
+            }
+        }
+    }
     
-    /*Line Color*/
-    var highlightLineColor:UIColor = UIColor.greenColor()
+    /** Line Color*/
+    internal var highlightLineColor:UIColor = UIColor.greenColor()
     
-    /*Line Color*/
-    var lineColor:UIColor = UIColor.lightGrayColor()
+    /** Line Color*/
+    internal var lineColor:UIColor = UIColor.lightGrayColor()
     
-    /*Line Width*/
-    var lineHeight:CGFloat = 1
+    /** Line Width*/
+    internal var lineHeight:CGFloat = 1
     
-    /*Hightlight animation*/
-    var highlightAnimation:Bool = true
+    /** Hightlight animation*/
+    internal var highlightAnimation:Bool = true
     
-    /*Place holder text color*/
-    var textColorPlaceHolder:UIColor = UIColor.lightGrayColor()
+    /** Place holder text color*/
+    internal var textColorPlaceHolder:UIColor = UIColor.lightGrayColor()
     
-    /*Place holder text size*/
-    var textSizePlaceHolder:CGFloat = 12.0
+    /** Place holder text size*/
+    internal var textSizePlaceHolder:CGFloat = 12.0
+    
+    /** Drop Down Icon's UIImage */
+    internal var dropDown:UIImage? = nil
+    
+    /**Image Icon*/
+    internal var iconImage:UIImage?
     
     /*Text Field Style
-    *0 for Line
-    *1 for Square bracket style at the bottom*/
-    var style:Int = 0 {
+     *0 for Line
+     *1 for Square bracket style at the bottom*/
+    internal var style:Int = 0 {
         didSet{
             if style == 0 {
                 bottomStyle = .LINE
@@ -60,7 +80,7 @@ class MRTextField:UITextField, UITextFieldDelegate {
         self.delegate = nil
     }
     
-    /*Override DrawRect*/
+    /** Override DrawRect*/
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
@@ -68,6 +88,20 @@ class MRTextField:UITextField, UITextFieldDelegate {
         
         rectangle = rect
         drawLine(normalLayer, isHighlight: false)
+        
+        if self.iconImage != nil {
+            let imageView = UIImageView(frame: CGRect(x: 2, y: 1, width: 15, height: rect.height - 6))
+            imageView.image = self.iconImage!
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            self.addSubview(imageView)
+        }
+        
+        if dropDown != nil {
+            let imageView = UIImageView(frame: CGRect(x: rect.width-15, y: 1, width: 15, height: rect.height - 6))
+            imageView.image = dropDown
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            self.addSubview(imageView)
+        }
     }
     
     /*draw bottom line*/
@@ -169,7 +203,7 @@ class MRTextField:UITextField, UITextFieldDelegate {
     override func drawPlaceholderInRect(rect: CGRect) {
         let f = UIFont.systemFontOfSize(textSizePlaceHolder)
         let attributes = [NSForegroundColorAttributeName: textColorPlaceHolder,
-            NSFontAttributeName: f]
+                          NSFontAttributeName: f]
         self.attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: attributes)
         super.drawPlaceholderInRect(rect)
     }

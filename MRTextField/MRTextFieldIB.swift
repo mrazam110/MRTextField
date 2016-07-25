@@ -18,30 +18,50 @@ class MRTextFieldIB:UITextField, UITextFieldDelegate {
     
     var myDelegate:MRTextFieldIBDelegate?
     
-    /*Padding Left and Right //UIEdgeInsets(0,5,0,5) TLBR*/
-    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+    /** Adjust with respect to Drop Down Image and Icon Image*/
+    private var padding:UIEdgeInsets {
+        get {
+            if iconImage == nil {
+                if dropDown != nil {
+                    return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 20)
+                }
+                return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+            }else{
+                if dropDown != nil {
+                    return UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 20)
+                }
+                return UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 5)
+            }
+        }
+    }
     
     /*Line Color*/
-    @IBInspectable var highlightLineColor:UIColor = UIColor.greenColor()
+    @IBInspectable internal var highlightLineColor:UIColor = UIColor.greenColor()
     
     /*Line Color*/
-    @IBInspectable var lineColor:UIColor = UIColor.lightGrayColor()
+    @IBInspectable internal var lineColor:UIColor = UIColor.lightGrayColor()
     
     /*Line Width*/
-    @IBInspectable var lineHeight:CGFloat = 1
+    @IBInspectable internal var lineHeight:CGFloat = 1
     
     /*Hightlight animation*/
-    @IBInspectable var highlightAnimation:Bool = true
+    @IBInspectable internal var highlightAnimation:Bool = true
     
     /*Place holder text color*/
-    @IBInspectable var textColorPlaceHolder:UIColor = UIColor.lightGrayColor()
+    @IBInspectable internal var textColorPlaceHolder:UIColor = UIColor.lightGrayColor()
     
     /*Place holder text size*/
-    @IBInspectable var textSizePlaceHolder:CGFloat = 12.0
+    @IBInspectable internal var textSizePlaceHolder:CGFloat = 12.0
     
-    /*Text Field Style 
-    *0 for Line
-    *1 for Square bracket style at the bottom*/
+    /** Drop Down Icon's UIImage */
+    @IBInspectable internal var dropDown:UIImage? = nil
+    
+    /**Image Icon*/
+    @IBInspectable internal var iconImage:UIImage?
+    
+    /*Text Field Style
+     *0 for Line
+     *1 for Square bracket style at the bottom*/
     @IBInspectable var style:Int = 0 {
         didSet{
             if style == 0 {
@@ -68,6 +88,20 @@ class MRTextFieldIB:UITextField, UITextFieldDelegate {
         
         rectangle = rect
         drawLine(normalLayer, isHighlight: false)
+        
+        if self.iconImage != nil {
+            let imageView = UIImageView(frame: CGRect(x: 2, y: 1, width: 15, height: rect.height - 6))
+            imageView.image = self.iconImage!
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            self.addSubview(imageView)
+        }
+        
+        if dropDown != nil {
+            let imageView = UIImageView(frame: CGRect(x: rect.width-15, y: 1, width: 15, height: rect.height - 6))
+            imageView.image = dropDown
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            self.addSubview(imageView)
+        }
     }
     
     /*draw bottom line*/
@@ -93,7 +127,7 @@ class MRTextFieldIB:UITextField, UITextFieldDelegate {
                 hlAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
                 hlAnimation.removedOnCompletion = false
                 hlAnimation.fillMode = kCAFillModeForwards
-                    CATransaction.setCompletionBlock({ () -> Void in
+                CATransaction.setCompletionBlock({ () -> Void in
                 })
                 layer.addAnimation(hlAnimation, forKey: "strokeEnd")
                 CATransaction.commit()
@@ -128,16 +162,16 @@ class MRTextFieldIB:UITextField, UITextFieldDelegate {
     private func getPath() -> UIBezierPath {
         let path = UIBezierPath()
         switch bottomStyle {
-            case .SQUAREBRACKET:
-                path.moveToPoint(CGPointMake(0, rectangle.height - 5))
-                path.addLineToPoint(CGPointMake(0, rectangle.height))
-                path.addLineToPoint(CGPointMake(rectangle.width, rectangle.height))
-                path.addLineToPoint(CGPointMake(rectangle.width, rectangle.height - 5))
-                break
-            default:
-                path.moveToPoint(CGPointMake(0, rectangle.height))
-                path.addLineToPoint(CGPointMake(rectangle.width, rectangle.height))
-                break
+        case .SQUAREBRACKET:
+            path.moveToPoint(CGPointMake(0, rectangle.height - 5))
+            path.addLineToPoint(CGPointMake(0, rectangle.height))
+            path.addLineToPoint(CGPointMake(rectangle.width, rectangle.height))
+            path.addLineToPoint(CGPointMake(rectangle.width, rectangle.height - 5))
+            break
+        default:
+            path.moveToPoint(CGPointMake(0, rectangle.height))
+            path.addLineToPoint(CGPointMake(rectangle.width, rectangle.height))
+            break
         }
         
         return path
@@ -169,7 +203,7 @@ class MRTextFieldIB:UITextField, UITextFieldDelegate {
     override func drawPlaceholderInRect(rect: CGRect) {
         let f = UIFont.systemFontOfSize(textSizePlaceHolder)
         let attributes = [NSForegroundColorAttributeName: textColorPlaceHolder,
-            NSFontAttributeName: f]
+                          NSFontAttributeName: f]
         self.attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: attributes)
         super.drawPlaceholderInRect(rect)
     }
