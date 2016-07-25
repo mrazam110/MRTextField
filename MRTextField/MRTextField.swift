@@ -1,9 +1,29 @@
-//
-//  MRTextField.swift
-//  MRMViewControllerDemo
-//
-//  Created by Muhammad Raza on 24/12/2015.
-//  Copyright © 2015 Muhammad Raza. All rights reserved.
+/**
+ *  MRTextField - Customized UITextField for iOS Developers
+ *
+ *  For usage, see documentation of the classes/symbols listed in this file, as well
+ *  as the guide available at: github.com/johnsundell/wrap
+ *
+ *  Copyright (c) Muhammad Raza Master. Licensed under the MIT license, as follows:
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ */
 //
 
 import UIKit
@@ -81,7 +101,7 @@ public class MRTextField:UITextField, UITextFieldDelegate {
     }
     
     /** Override DrawRect*/
-    override func drawRect(rect: CGRect) {
+    override public func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
         self.delegate = self
@@ -178,15 +198,15 @@ public class MRTextField:UITextField, UITextFieldDelegate {
     }
     
     // MARK: TextField BOUNDS
-    override func textRectForBounds(bounds: CGRect) -> CGRect {
+    override public func textRectForBounds(bounds: CGRect) -> CGRect {
         return self.newBounds(bounds)
     }
     
-    override func placeholderRectForBounds(bounds: CGRect) -> CGRect {
+    override public func placeholderRectForBounds(bounds: CGRect) -> CGRect {
         return self.newBounds(bounds)
     }
     
-    override func editingRectForBounds(bounds: CGRect) -> CGRect {
+    override public func editingRectForBounds(bounds: CGRect) -> CGRect {
         return self.newBounds(bounds)
     }
     
@@ -200,7 +220,7 @@ public class MRTextField:UITextField, UITextFieldDelegate {
     }
     
     /*Place Holder Setting*/
-    override func drawPlaceholderInRect(rect: CGRect) {
+    override public func drawPlaceholderInRect(rect: CGRect) {
         let f = UIFont.systemFontOfSize(textSizePlaceHolder)
         let attributes = [NSForegroundColorAttributeName: textColorPlaceHolder,
                           NSFontAttributeName: f]
@@ -209,13 +229,13 @@ public class MRTextField:UITextField, UITextFieldDelegate {
     }
     
     //UITextFieldDelegate Functions
-    func textFieldDidBeginEditing(textField: UITextField) {
+    public func textFieldDidBeginEditing(textField: UITextField) {
         
         drawLine(highlightLayer, isHighlight: true)
         self.myDelegate?.MRTextFieldDidBeginEditing?(self)
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    public func textFieldDidEndEditing(textField: UITextField) {
         
         self.removeHighlight()
         self.myDelegate?.MRTextFieldDidEndEditing?(self)
