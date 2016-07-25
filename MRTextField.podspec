@@ -4,11 +4,11 @@ Pod::Spec.new do |s|
 s.platform = :ios
 s.ios.deployment_target = '8.0'
 s.name = "MRTextField"
-s.summary = "Customize UITextField for iOS Developers"
+s.summary = "Customized UITextField for iOS Developers"
 s.requires_arc = true
 
 # 2
-s.version = "0.1.3"
+s.version = "0.2.0"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -27,16 +27,9 @@ s.homepage = "https://github.com/mrazam110/MRTextField"
 # 6 - Replace this URL with your own Git URL from "Quick Setup"
 s.source = { :git => "https://github.com/mrazam110/MRTextField.git", :tag => "#{s.version}"}
 
-# For example,
-# s.source = { :git => "https://github.com/JRG-Developer/RWPickFlavor.git", :tag => "#{s.version}"}
-
 
 # 7
 s.framework = "UIKit"
 
 # 8
 s.source_files = "MRTextField/**/*.{swift}"
-
-# 9
-#s.resources = "RWPickFlavor/**/*.{png,jpeg,jpg,storyboard,xib}"
-end

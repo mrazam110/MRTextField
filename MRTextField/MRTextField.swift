@@ -57,7 +57,7 @@ class MRTextField:UITextField, UITextFieldDelegate {
     internal var dropDown:UIImage? = nil
     
     /**Image Icon*/
-    internal var iconImage:UIImage?
+    internal var iconImage:UIImage? = nil
     
     /*Text Field Style
      *0 for Line

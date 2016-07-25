@@ -4,6 +4,7 @@
 ![Platform](https://img.shields.io/cocoapods/p/MRTextField.svg)
 ![Version](https://img.shields.io/cocoapods/v/MRTextField.svg)
 
+![Screenshot](https://github.com/mrazam110/MRTextField/blob/master/screenshots/screenshot04.png)
 ![Screenshot](https://github.com/mrazam110/MRTextField/blob/master/screenshots/screenshot03.png)
 
 #Requirements
@@ -35,6 +36,10 @@ Step 3. In Attributes Inspector, you can view properties
 
 **Properties:**
 
+*Image Icon*: Image Icon on left side, Like username icon etc
+
+*Drop Down Icon*: Dropdown Icon on right side, Like dropdown icon etc
+
 *Highlight Line Color: UIColor* UIColor.greenColor()
 
 *Line Color: UIColor* default: UIColor.lightGrayColor()
@@ -61,6 +66,12 @@ Step 2. In Identity Text, in Custom class, change UITextField to MRTextField
 
 All the properties will work same as the UITextField
 ````swift
+//For Adding the Drop down Icon:
+textField.dropDown = UIImage(named: "")
+
+//For Adding the Drop down Icon:
+textField.iconImage = UIImage(named: "")
+
 // For changing the bottom line color : Default: UIColor.lightGrayColor()
 textField.lineColor = UIColor.lightGrayColor()
 
