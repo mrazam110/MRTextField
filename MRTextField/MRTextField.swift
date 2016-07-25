@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MRTextField:UITextField, UITextFieldDelegate {
+public class MRTextField:UITextField, UITextFieldDelegate {
     
     /** Size of Frame */
     private var rectangle:CGRect!

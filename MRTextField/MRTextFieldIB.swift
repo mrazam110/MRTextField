@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class MRTextFieldIB:UITextField, UITextFieldDelegate {
+public class MRTextFieldIB:UITextField, UITextFieldDelegate {
     
     private var rectangle:CGRect!
     
