@@ -69,7 +69,7 @@ All the properties will work same as the UITextField
 //For Adding the Drop down Icon:
 textField.dropDown = UIImage(named: "")
 
-//For Adding the Drop down Icon:
+//For Adding the Image Icon:
 textField.iconImage = UIImage(named: "")
 
 // For changing the bottom line color : Default: UIColor.lightGrayColor()
