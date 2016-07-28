@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nO5-Gs-baH">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MRTextFieldDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MRTextField" placeholder="Select User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yi-r0-WhX" customClass="MRTextFieldIB" customModule="MRTextFieldDemo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="458" width="205" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="ggm-f6-7Op"/>
+                                    <constraint firstAttribute="height" constant="30" id="tDK-Ky-mDv"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="highlightAnimation" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightLineColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="dropDown" value="drop-down-arrow"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="user"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9b6-zq-ppN">
+                                <rect key="frame" x="20" y="496" width="240" height="90"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyy-de-wVO">
+                                        <rect key="frame" x="0.0" y="43" width="240" height="47"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MRTextField" placeholder="Select User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d7g-Pb-4eY" customClass="MRTextFieldIB" customModule="MRTextFieldDemo" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="9" width="205" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="L8D-gr-CKC"/>
+                                                    <constraint firstAttribute="width" constant="205" id="gnb-6I-FsV"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="highlightAnimation" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightLineColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="dropDown" value="drop-down-arrow"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="user"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="A5B-lc-gh7"/>
+                                            <constraint firstItem="d7g-Pb-4eY" firstAttribute="centerX" secondItem="Wyy-de-wVO" secondAttribute="centerX" constant="-9.5" id="BMb-aO-3bZ"/>
+                                            <constraint firstItem="d7g-Pb-4eY" firstAttribute="centerY" secondItem="Wyy-de-wVO" secondAttribute="centerY" id="Zpf-bj-wNE"/>
+                                            <constraint firstAttribute="height" constant="47" id="vJq-zS-qdT"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MRTextField" placeholder="Select User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ned-Dn-Nj4" customClass="MRTextFieldIB" customModule="MRTextFieldDemo" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="5" width="205" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="205" id="52w-LW-zf7"/>
+                                            <constraint firstAttribute="height" constant="30" id="bCs-Fg-JcB"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="highlightAnimation" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="highlightLineColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="dropDown" value="drop-down-arrow"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="user"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Wyy-de-wVO" firstAttribute="leading" secondItem="9b6-zq-ppN" secondAttribute="leading" id="C13-KV-3cd"/>
+                                    <constraint firstItem="Wyy-de-wVO" firstAttribute="top" secondItem="ned-Dn-Nj4" secondAttribute="bottom" constant="8" id="ROh-FF-aA9"/>
+                                    <constraint firstItem="ned-Dn-Nj4" firstAttribute="leading" secondItem="9b6-zq-ppN" secondAttribute="leading" constant="10" id="Yy6-vU-IF9"/>
+                                    <constraint firstAttribute="height" constant="90" id="eOu-um-iea"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wyy-de-wVO" secondAttribute="bottom" id="p6A-Ri-5to"/>
+                                    <constraint firstAttribute="width" constant="240" id="pk5-yu-zEJ"/>
+                                    <constraint firstItem="ned-Dn-Nj4" firstAttribute="top" secondItem="9b6-zq-ppN" secondAttribute="top" constant="5" id="qOd-xB-K6n"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.08235294118" green="0.29803921570000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9b6-zq-ppN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="5nK-he-KeR"/>
+                            <constraint firstItem="9b6-zq-ppN" firstAttribute="top" secondItem="7yi-r0-WhX" secondAttribute="bottom" constant="8" id="M4f-Ny-2ga"/>
+                            <constraint firstItem="7yi-r0-WhX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="VPI-qf-ytQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9b6-zq-ppN" secondAttribute="bottom" constant="14" id="r4s-5p-69c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="erY-LB-MSG"/>
+                    <connections>
+                        <outlet property="subUnderView" destination="d7g-Pb-4eY" id="8Ft-sK-i4j"/>
+                        <outlet property="textfield" destination="7yi-r0-WhX" id="OKg-S0-ZUN"/>
+                        <outlet property="underView" destination="ned-Dn-Nj4" id="NUU-4n-Qqq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1091" y="362"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tQo-pt-Cuz">
+            <objects>
+                <viewController id="TgA-T6-Aml" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QW1-nM-aOR"/>
+                        <viewControllerLayoutGuide type="bottom" id="5ui-lS-nvF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EvD-EY-tbt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcy-fL-lpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1742" y="362"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y7n-Pw-7ec">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nO5-Gs-baH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qeF-1e-ibZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QEB-8t-Ye8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6jU-r8-2Sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="279" y="362"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="drop-down-arrow" width="32" height="32"/>
+        <image name="user" width="16" height="16"/>
+    </resources>
+</document>
