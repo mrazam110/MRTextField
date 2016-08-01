@@ -16,7 +16,11 @@ From [CocoaPods](https://www.cocoapods.org/):
 
 ````ruby
 # For Latest release in cocoapods
-pod 'MRTextField' :branch => 'v2.x'
+// For version 3.x
+pod 'MRTextField', '~> 3.0'
+
+// For version 2.x
+pod 'MRTextField', '~> 2.0'
 ````
 
 Without CocoaPods:
