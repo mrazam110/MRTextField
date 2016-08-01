@@ -16,7 +16,7 @@ From [CocoaPods](https://www.cocoapods.org/):
 
 ````ruby
 # For Latest release in cocoapods
-pod 'MRTextField'
+pod 'MRTextField', '~> 0.3.0'
 ````
 
 Without CocoaPods:
@@ -30,9 +30,39 @@ Without CocoaPods:
 
 Step 1. Drag and Drop the UITextField
 
-Step 2. In Identity Text, in Custom class, change UITextField to MRTextFieldIB
+Step 2. In Identity Text, in Custom class, change UITextField to MRTextField
 
 Step 3. In Attributes Inspector, you can view properties
+
+**Adding Keyboard Auto Scroll:**
+
+*You need to write a simple code for autoscroll*
+
+````swift
+// Set property of parentView of MRTextField
+textField.parentView = self.view
+
+````
+
+**Delegate Functions:**
+
+*We recommend you to use MRTextFieldDelegate instead of UITextFieldDelegate*
+
+````swift
+// Set delegate
+textField.myDelegate = self
+
+// Delegate functions recommended to use instead of textFieldDidBeginEditing
+func MRTextFieldDidBeginEditing(textField: MRTextField)
+
+// Delegate functions recommended to use instead of textFieldDidEndEditing
+func MRTextFieldDidEndEditing(textField: MRTextField)
+
+// Delegate functions recommended to use instead of textFieldDidBeginEditing
+func MRTextFieldShouldBeginEditing(textField: MRTextField) -> Bool
+
+````
+
 
 **Properties:**
 
@@ -58,13 +88,8 @@ Set Value of `Style` to 0 (LINE) or 1 (SQUARE BRACKET at the Bottom)
 
 and ENJOY!!
 
-#You can use without IBDesignable
+#You can set properties using code
 
-Step 1. Drag and Drop the UITextField
-
-Step 2. In Identity Text, in Custom class, change UITextField to MRTextField
-
-All the properties will work same as the UITextField
 ````swift
 //For Adding the Drop down Icon:
 textField.dropDown = UIImage(named: "")
