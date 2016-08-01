@@ -8,19 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController, MRTextFieldIBDelegate {
+class ViewController: UIViewController, MRTextFieldDelegate {
 
-    @IBOutlet weak var textfield: MRTextFieldIB!
+    @IBOutlet weak var bottomRightTextField: MRTextField!
+    @IBOutlet weak var textfield: MRTextField!
+    @IBOutlet weak var underView: MRTextField!
+    @IBOutlet weak var subUnderView: MRTextField!
     
-    @IBOutlet weak var underView: MRTextFieldIB!
-    
-    @IBOutlet weak var subUnderView: MRTextFieldIB!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         textfield.parentView = self.view
+        textfield.myDelegate = self
+        underView.myDelegate = self
+        subUnderView.myDelegate = self
         underView.parentView = self.view
         subUnderView.parentView = self.view
+        
+        bottomRightTextField.parentView = self.view
         
     }
 
@@ -28,18 +33,24 @@ class ViewController: UIViewController, MRTextFieldIBDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func MRTextFieldShouldBeginEditing(textField: MRTextField) -> Bool {
+        return true
+    }
 
-    func MRTextFieldDidEndEditing(textField: MRTextFieldIB) {
+    func MRTextFieldDidEndEditing(textField: MRTextField) {
         print(#function)
     }
     
-    func MRTextFieldDidBeginEditing(textField: MRTextFieldIB) {
+    func MRTextFieldDidBeginEditing(textField: MRTextField) {
         print(#function)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    
 
 }
 

@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MRTextField" placeholder="Select User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yi-r0-WhX" customClass="MRTextFieldIB" customModule="MRTextFieldDemo" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MRTextField" placeholder="Select User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yi-r0-WhX" customClass="MRTextField" customModule="MRTextFieldDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="458" width="205" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="205" id="ggm-f6-7Op"/>
@@ -47,7 +47,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyy-de-wVO">
                                         <rect key="frame" x="0.0" y="43" width="240" height="47"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MRTextField" placeholder="Select User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d7g-Pb-4eY" customClass="MRTextFieldIB" customModule="MRTextFieldDemo" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MRTextField" placeholder="Select User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d7g-Pb-4eY" customClass="MRTextField" customModule="MRTextFieldDemo" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="9" width="205" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="L8D-gr-CKC"/>
@@ -80,7 +80,7 @@
                                             <constraint firstAttribute="height" constant="47" id="vJq-zS-qdT"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MRTextField" placeholder="Select User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ned-Dn-Nj4" customClass="MRTextFieldIB" customModule="MRTextFieldDemo" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MRTextField" placeholder="Select User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ned-Dn-Nj4" customClass="MRTextField" customModule="MRTextFieldDemo" customModuleProvider="target">
                                         <rect key="frame" x="10" y="5" width="205" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="205" id="52w-LW-zf7"/>
@@ -116,17 +116,51 @@
                                     <constraint firstItem="ned-Dn-Nj4" firstAttribute="top" secondItem="9b6-zq-ppN" secondAttribute="top" constant="5" id="qOd-xB-K6n"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Top Left" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XYC-8i-AM4" customClass="MRTextField" customModule="MRTextFieldDemo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="72" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="KJl-fQ-lp2"/>
+                                    <constraint firstAttribute="height" constant="30" id="w46-nC-B2p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Top Right" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmw-8e-5OD" customClass="MRTextField" customModule="MRTextFieldDemo" customModuleProvider="target">
+                                <rect key="frame" x="483" y="72" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eV4-Uh-qDx"/>
+                                    <constraint firstAttribute="width" constant="97" id="oJY-Tc-de1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bottom Right" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="osz-tn-JkX" customClass="MRTextField" customModule="MRTextFieldDemo" customModuleProvider="target">
+                                <rect key="frame" x="483" y="550" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="1VH-VE-2M8"/>
+                                    <constraint firstAttribute="height" constant="30" id="bIu-Dd-TDk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.08235294118" green="0.29803921570000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9b6-zq-ppN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="5nK-he-KeR"/>
+                            <constraint firstItem="cmw-8e-5OD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="8bF-vd-t74"/>
+                            <constraint firstAttribute="trailing" secondItem="osz-tn-JkX" secondAttribute="trailing" constant="20" id="F4K-76-UlL"/>
                             <constraint firstItem="9b6-zq-ppN" firstAttribute="top" secondItem="7yi-r0-WhX" secondAttribute="bottom" constant="8" id="M4f-Ny-2ga"/>
                             <constraint firstItem="7yi-r0-WhX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="VPI-qf-ytQ"/>
+                            <constraint firstItem="XYC-8i-AM4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="frn-eH-3Gr"/>
+                            <constraint firstAttribute="trailing" secondItem="cmw-8e-5OD" secondAttribute="trailing" constant="20" id="nhH-Zu-zxv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9b6-zq-ppN" secondAttribute="bottom" constant="14" id="r4s-5p-69c"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="osz-tn-JkX" secondAttribute="bottom" constant="20" id="vch-H3-uay"/>
+                            <constraint firstItem="XYC-8i-AM4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xFj-sG-9eh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="erY-LB-MSG"/>
                     <connections>
+                        <outlet property="bottomRightTextField" destination="osz-tn-JkX" id="b8e-NO-FKk"/>
                         <outlet property="subUnderView" destination="d7g-Pb-4eY" id="8Ft-sK-i4j"/>
                         <outlet property="textfield" destination="7yi-r0-WhX" id="OKg-S0-ZUN"/>
                         <outlet property="underView" destination="ned-Dn-Nj4" id="NUU-4n-Qqq"/>
@@ -135,24 +169,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1091" y="362"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tQo-pt-Cuz">
-            <objects>
-                <viewController id="TgA-T6-Aml" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QW1-nM-aOR"/>
-                        <viewControllerLayoutGuide type="bottom" id="5ui-lS-nvF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EvD-EY-tbt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcy-fL-lpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1742" y="362"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y7n-Pw-7ec">

@@ -12,8 +12,7 @@
 		753472491D4608DB00600B9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753472471D4608DB00600B9F /* Main.storyboard */; };
 		7534724B1D4608DB00600B9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7534724A1D4608DB00600B9F /* Assets.xcassets */; };
 		7534724E1D4608DB00600B9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7534724C1D4608DB00600B9F /* LaunchScreen.storyboard */; };
-		75F6CE401D48FC7400E38C16 /* MRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6CE3E1D48FC7400E38C16 /* MRTextField.swift */; };
-		75F6CE411D48FC7400E38C16 /* MRTextFieldIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6CE3F1D48FC7400E38C16 /* MRTextFieldIB.swift */; };
+		75F6CE411D48FC7400E38C16 /* MRTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F6CE3F1D48FC7400E38C16 /* MRTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +23,7 @@
 		7534724A1D4608DB00600B9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7534724D1D4608DB00600B9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7534724F1D4608DB00600B9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75F6CE3E1D48FC7400E38C16 /* MRTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextField.swift; sourceTree = "<group>"; };
-		75F6CE3F1D48FC7400E38C16 /* MRTextFieldIB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextFieldIB.swift; sourceTree = "<group>"; };
+		75F6CE3F1D48FC7400E38C16 /* MRTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +58,7 @@
 			children = (
 				753472431D4608DB00600B9F /* AppDelegate.swift */,
 				753472451D4608DB00600B9F /* ViewController.swift */,
-				75F6CE3E1D48FC7400E38C16 /* MRTextField.swift */,
-				75F6CE3F1D48FC7400E38C16 /* MRTextFieldIB.swift */,
+				75F6CE3F1D48FC7400E38C16 /* MRTextField.swift */,
 				753472471D4608DB00600B9F /* Main.storyboard */,
 				7534724A1D4608DB00600B9F /* Assets.xcassets */,
 				7534724C1D4608DB00600B9F /* LaunchScreen.storyboard */,
@@ -142,9 +139,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				753472461D4608DB00600B9F /* ViewController.swift in Sources */,
-				75F6CE411D48FC7400E38C16 /* MRTextFieldIB.swift in Sources */,
+				75F6CE411D48FC7400E38C16 /* MRTextField.swift in Sources */,
 				753472441D4608DB00600B9F /* AppDelegate.swift in Sources */,
-				75F6CE401D48FC7400E38C16 /* MRTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
