@@ -27,15 +27,13 @@
 //
 import UIKit
 
-open class MRTextField:UITextField, UITextFieldDelegate {
+@IBDesignable
+open class MRTextField: UITextField {
     
-    /** Size of Frame */
     fileprivate var rectangle:CGRect!
     
     fileprivate var highlightLayer = CAShapeLayer()
     fileprivate var normalLayer = CAShapeLayer()
-    
-    internal var myDelegate:MRTextFieldDelegate?
     
     /** Adjust with respect to Drop Down Image and Icon Image*/
     fileprivate var padding:UIEdgeInsets {
@@ -54,34 +52,34 @@ open class MRTextField:UITextField, UITextFieldDelegate {
         }
     }
     
-    /** Line Color*/
-    internal var highlightLineColor:UIColor = UIColor.green
+    /*Line Color*/
+    @IBInspectable internal var highlightLineColor:UIColor = UIColor.green
     
-    /** Line Color*/
-    internal var lineColor:UIColor = UIColor.lightGray
+    /*Line Color*/
+    @IBInspectable internal var lineColor:UIColor = UIColor.lightGray
     
-    /** Line Width*/
-    internal var lineHeight:CGFloat = 1
+    /*Line Width*/
+    @IBInspectable internal var lineHeight:CGFloat = 1
     
-    /** Hightlight animation*/
-    internal var highlightAnimation:Bool = true
+    /*Hightlight animation*/
+    @IBInspectable internal var highlightAnimation:Bool = true
     
-    /** Place holder text color*/
-    internal var textColorPlaceHolder:UIColor = UIColor.lightGray
+    /*Place holder text color*/
+    @IBInspectable internal var textColorPlaceHolder:UIColor = UIColor.lightGray
     
-    /** Place holder text size*/
-    internal var textSizePlaceHolder:CGFloat = 12.0
+    /*Place holder text size*/
+    @IBInspectable internal var textSizePlaceHolder:CGFloat = 12.0
     
     /** Drop Down Icon's UIImage */
-    internal var dropDown:UIImage? = nil
+    @IBInspectable internal var dropDown:UIImage? = nil
     
     /**Image Icon*/
-    internal var iconImage:UIImage? = nil
+    @IBInspectable internal var iconImage:UIImage?
     
     /*Text Field Style
      *0 for Line
      *1 for Square bracket style at the bottom*/
-    internal var style:Int = 0 {
+    @IBInspectable var style:Int = 0 {
         didSet{
             if style == 0 {
                 bottomStyle = .line
@@ -99,11 +97,9 @@ open class MRTextField:UITextField, UITextFieldDelegate {
         self.delegate = nil
     }
     
-    /** Override DrawRect*/
+    /*Override DrawRect*/
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
-        
-        self.delegate = self
         
         rectangle = rect
         drawLine(normalLayer, isHighlight: false)
@@ -227,26 +223,8 @@ open class MRTextField:UITextField, UITextFieldDelegate {
         super.drawPlaceholder(in: rect)
     }
     
-    //UITextFieldDelegate Functions
-    open func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        drawLine(highlightLayer, isHighlight: true)
-        self.myDelegate?.MRTextFieldDidBeginEditing?(self)
-    }
-    
-    open func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        self.removeHighlight()
-        self.myDelegate?.MRTextFieldDidEndEditing?(self)
-    }
-    
     enum bottomLine:Int {
         case line
         case squarebracket
     }
-}
-
-@objc protocol MRTextFieldDelegate {
-    @objc optional func MRTextFieldDidBeginEditing(_ textField: MRTextField)
-    @objc optional func MRTextFieldDidEndEditing(_ textField: MRTextField)
 }

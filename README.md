@@ -30,7 +30,7 @@ Without CocoaPods:
 
 Step 1. Drag and Drop the UITextField
 
-Step 2. In Identity Text, in Custom class, change UITextField to MRTextFieldIB
+Step 2. In Identity Text, in Custom class, change UITextField to MRTextField
 
 Step 3. In Attributes Inspector, you can view properties
 
@@ -58,11 +58,7 @@ Set Value of `Style` to 0 (LINE) or 1 (SQUARE BRACKET at the Bottom)
 
 and ENJOY!!
 
-#You can use without IBDesignable
-
-Step 1. Drag and Drop the UITextField
-
-Step 2. In Identity Text, in Custom class, change UITextField to MRTextField
+#You can use in code
 
 All the properties will work same as the UITextField
 ````swift
